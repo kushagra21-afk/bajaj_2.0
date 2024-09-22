@@ -18,7 +18,7 @@ app.post('/bfhl', (req, res) => {
 
     const numbers = data.filter(item => !isNaN(item));
     const alphabets = data.filter(item => isNaN(item));
-    const lowercaseAlphabets=alphabes.filter(char=> char===char.tolowerCase());
+    const lowercaseAlphabets=alphabets.filter(char=> char===char.tolowerCase());
     const highAlphabet = lowercaseAlphabets.length ? [alphabets.sort((a, b) => b.localeCompare(a, undefined, { sensitivity: 'base' }))[0]] : [];
     let file_valid=file_b64?true:false
     let file_mime_type=file_valid?"image/png":null;
