@@ -11,7 +11,8 @@ app.get('/',(req, res)=>{
 
 app.post('/bfhl', (req, res) => {
     console.log('Received POST request:', req.body); 
-    const { data } = req.body;
+    const { data, file_b64 } = req.body;
+
     if (!data || !Array.isArray(data)) {
         return res.status(400).json({ is_success: false, message: 'Invalid input' });
     }
